@@ -6,10 +6,6 @@
       <p>{{ post.body|truncate(100) }}</p>
       <p>
         {{ post.created_at.strftime('%H:%M %Y-%m-%d') }} |
-
-        {% with total=post.comments|length %}
-            {{ total }} comment {%- if total > 1 %}s{%- endif -%}
-        {% endwith %}
       </p>
     {% endfor %}
 {% endblock %}

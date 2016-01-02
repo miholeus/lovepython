@@ -2,8 +2,26 @@
 
 {% block page_header %}
     <div class="page-header">
-        <h1>Vote to become a python fan :)</h1>
+        <h1>Do you love python? <a href="#" class="btn btn-default" data-target="#voteWindow" data-toggle="modal">Go ahead</a></h1>
     </div>
+
+    <div class="modal fade" id="voteWindow">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">Vote to become a part of history</h4>
+                </div>
+                <div class="modal-body">
+                    <p>You are the nth fan of python language&hellip;</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">I'm not a fan</button>
+                    <button type="button" class="btn btn-primary">Yep, I'm a fan!</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 {% endblock %}
 
 {% block content %}

@@ -6,8 +6,8 @@ from flask.ext.mongoengine import MongoEngine
 
 def register_blueprints(app):
     # Prevents circular imports
-    from src.views import posts
-    app.register_blueprint(posts)
+    from src.views import bp
+    app.register_blueprint(bp)
 
 app = Flask(__name__)
 app.config['MONGODB_SETTINGS'] = {"DB" : "python"}

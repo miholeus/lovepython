@@ -5,7 +5,7 @@ from flask.views import MethodView
 from flask.ext.mongoengine.wtf import model_form
 from models import Post
 
-posts = Blueprint('posts', __name__, template_folder='templates')
+bp = Blueprint('votes', __name__, template_folder='templates')
 
 
 class ListView(MethodView):
@@ -22,5 +22,5 @@ class AboutView(MethodView):
         return render_template('index/about.html', active_link='/about/')
 
 # Register the urls
-posts.add_url_rule('/', view_func=ListView.as_view('list'))
-posts.add_url_rule('/about/', view_func=AboutView.as_view('about'))
+bp.add_url_rule('/', view_func=ListView.as_view('list'))
+bp.add_url_rule('/about/', view_func=AboutView.as_view('about'))

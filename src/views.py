@@ -13,9 +13,15 @@ class ListView(MethodView):
     @staticmethod
     def get():
         items = Post.objects
-        return render_template('posts/list.html', posts=items)
+        return render_template('posts/list.html', posts=items, active_link='/')
 
+
+class AboutView(MethodView):
+
+    @staticmethod
+    def get():
+        return render_template('index/about.html', active_link='/about/')
 
 # Register the urls
 posts.add_url_rule('/', view_func=ListView.as_view('list'))
-posts.add_url_rule('/<slug>/', view_func=ListView.as_view('detail'))
+posts.add_url_rule('/about/', view_func=AboutView.as_view('detail'))

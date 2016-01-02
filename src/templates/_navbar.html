@@ -1,0 +1,7 @@
+<div id="navbar" class="collapse navbar-collapse">
+    <ul class="nav navbar-nav">
+        {% for href, caption in [('/', 'Home'), ('/about/', 'About')] %}
+            <li{% if active_link == href %} class="active"{% endif %}><a href="{{ href }}">{{ caption }}</a></li>
+        {% endfor %}
+    </ul>
+</div><!--/.nav-collapse -->

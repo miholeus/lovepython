@@ -18,7 +18,7 @@ class Post(db.Document):
         return self.title
 
     meta = {
-        'allow_inheritance' : True,
+        'allow_inheritance': True,
         'indexes': ['-created_at', 'slug'],
         'ordering': ['-created_at']
     }

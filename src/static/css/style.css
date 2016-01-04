@@ -52,3 +52,19 @@ code {
     background-color: #fff;
     border: 0;
 }
+
+.label-checkbox {
+    font-weight: 400;
+    margin-bottom: 0;
+    margin-left: 5px;
+}
+
+span.input-group-checkbox {
+    /*width: 1%;*/
+    /*float: left;*/
+    display: table-cell;
+    vertical-align: middle;
+}
+.width100 {
+    width: 100%;
+}

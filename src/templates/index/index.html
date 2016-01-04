@@ -13,7 +13,61 @@
                     <h4 class="modal-title">Vote to become a part of history</h4>
                 </div>
                 <div class="modal-body">
-                    <p>You are the nth fan of python language&hellip;</p>
+                    <p>What do you like in Python?</p>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="input-group">
+                                <input type="checkbox" aria-label="..." value="1" id="val1" name="vote">
+                                <label for="val1" class="label-checkbox">Easy to read</label>
+                            </div><!-- /input-group -->
+                        </div><!-- /.col-lg-6 -->
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="input-group">
+                                <input type="checkbox" aria-label="..." value="2" id="val2" name="vote">
+                                <label for="val2" class="label-checkbox">Easy to use</label>
+                            </div><!-- /input-group -->
+                        </div><!-- /col-lg-6 -->
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="input-group">
+                                <input type="checkbox" name="vote" id="val3" value="3">
+                                <label for="val3" data-toggle="popover" data-placement="right" data-container="body"
+                                       class="label-checkbox"
+                                       data-content="Python may become popular for the Internet of things, as new platforms such as Raspberry Pi are based on it">
+                                    Internet of things opportunities
+                                </label>
+                            </div><!-- /input-group -->
+                        </div><!-- /col-lg-6 -->
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="input-group">
+                                <input type="checkbox" aria-label="..." value="4" id="val4" name="vote">
+                                <label for="val4" class="label-checkbox">Asynchronous coding benefits</label>
+                            </div><!-- /input-group -->
+                        </div><!-- /col-lg-6 -->
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="input-group">
+                                <input type="checkbox" aria-label="..." value="5" id="val5" name="vote">
+                                <label for="val5" class="label-checkbox">Multiparadigm approach bests Java</label>
+                            </div><!-- /input-group -->
+                        </div><!-- /col-lg-6 -->
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="input-group width100">
+                                 <span class="input-group-checkbox">
+                                    <input type="checkbox" aria-label="..." value="6" id="val6" name="vote">
+                                 </span>
+                                <input type="text" class="form-control" placeholder="your variant...">
+                            </div><!-- /input-group -->
+                        </div><!-- /col-lg-6 -->
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">I'm not a fan</button>
@@ -48,4 +102,10 @@
     <li class="list-group-item">If the implementation is easy to explain, it may be a good idea.</li>
     <li class="list-group-item">Namespaces are one honking great idea -- let's do more of those!</li>
     </ul>
+{% endblock %}
+
+{% block js_footer %}
+    <script>
+    $("label[data-toggle='popover']").popover({animation: true});
+    </script>
 {% endblock %}

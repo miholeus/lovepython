@@ -77,7 +77,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">I'm not a fan</button>
-                    <button type="button" class="btn btn-primary">Yep, I'm a fan!</button>
+                    <button type="button" class="btn btn-primary" id="voteBtn">Yep, I'm a fan!</button>
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
@@ -113,5 +113,18 @@
 {% block js_footer %}
     <script>
     $("label[data-toggle='popover']").popover({animation: true, trigger: 'hover'});
+    $("#voteBtn").on('click', function(e){
+        e.preventDefault();
+        var values = $("input[name='vote']:checkbox:checked").map(function(){
+            return $(this).val()
+        }).get();
+        $.post("/vote/", {value: values}, function(response){
+            if (response.status == 'ok') {// show modal window success
+bu
+            } else {// show modal window error
+
+            }
+        })
+    })
     </script>
 {% endblock %}

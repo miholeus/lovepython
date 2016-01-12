@@ -1,9 +1,7 @@
 __author__ = 'miholeus'
 
-from flask import Blueprint, request, redirect, render_template, url_for, jsonify
+from flask import Blueprint, request, render_template, jsonify
 from flask.views import MethodView
-# from flask.ext.mongoengine.wtf import model_form
-from models import Post
 
 bp = Blueprint('votes', __name__, template_folder='templates')
 

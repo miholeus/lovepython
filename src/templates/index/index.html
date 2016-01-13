@@ -70,7 +70,7 @@
                                  <span class="input-group-checkbox">
                                     <input type="checkbox" aria-label="..." value="6" id="val6" name="vote">
                                  </span>
-                                <input type="text" class="form-control" placeholder="your variant...">
+                                <input type="text" class="form-control" id="user-variant" placeholder="your variant...">
                             </div><!-- /input-group -->
                         </div><!-- /col-lg-6 -->
                     </div>
@@ -114,17 +114,22 @@
     <script>
     $("label[data-toggle='popover']").popover({animation: true, trigger: 'hover'});
     $("#voteBtn").on('click', function(e){
+        var vote;
         e.preventDefault();
         var values = $("input[name='vote']:checkbox:checked").map(function(){
             return $(this).val()
         }).get();
-        $.post("/vote/", {value: values}, function(response){
+        if ($.inArray(6, values)) {
+            vote = $("#user-variant").val()
+        }
+
+        $.post("/vote/", {value: values, vote: vote}, function(response){
             if (response.status == 'ok') {// show modal window success
-bu
+                $("#voteWindow").modal('hide');
             } else {// show modal window error
 
             }
-        })
+        }, 'json')
     })
     </script>
 {% endblock %}

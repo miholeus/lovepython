@@ -68,3 +68,9 @@ span.input-group-checkbox {
 .width100 {
     width: 100%;
 }
+#vote-message {
+    display: none;
+}
+#vote-success {
+    display: none;
+}

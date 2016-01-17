@@ -9,16 +9,24 @@ import datetime
 bp = Blueprint('votes', __name__, template_folder='templates')
 
 
+def total_voted_last_month():
+    """
+    Get total number of people voted for last 31 days
+    :return: int
+    """
+    return len(Vote.objects(created_at__gte=(datetime.datetime.now() - datetime.timedelta(days=31))))
+
+
 class ListView(MethodView):
     @staticmethod
     def get():
-        return render_template('index/index.html', active_link='/')
+        return render_template('index/index.html', active_link='/', total=total_voted_last_month())
 
 
 class AboutView(MethodView):
     @staticmethod
     def get():
-        return render_template('index/about.html', active_link='/about/')
+        return render_template('index/about.html', active_link='/about/', total=total_voted_last_month())
 
 
 class VoteView(MethodView):
